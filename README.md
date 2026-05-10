@@ -1,4 +1,4 @@
-# Sketch-to-Image Generation using GANs and Diffusion Models
+# Sketch-to-Image Generation
 
 > EE655 Course Project — IIT Kanpur  
 > Novel Approaches Tackling Sketch-to-Image Generation
