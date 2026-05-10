@@ -42,22 +42,8 @@ The project also proposes hybrid pipelines combining pretrained diffusion models
 
 ---
 
-# Project Architecture
 
-## 1. CLIP-Guided Stable Diffusion Pipeline
-
-### Step 1 — Sketch to Prompt using CLIP
-- Extracts semantic meaning from sketches
-- Converts sketches into descriptive prompts
-
-### Step 2 — Prompt Refinement
-Enhances prompts using:
-- Style modifiers
-- Lighting and shadows
-- Composition enhancement
-- Quality boosters
-
-### Step 3 — Image Generation
+### Image Generation
 Uses:
 - ControlNet
 - Stable Diffusion
@@ -76,7 +62,7 @@ while generating realistic textures and lighting.
 
 ---
 
-## 2. CycleGAN Approach
+## CycleGAN Approach 
 
 CycleGAN is used for:
 - Sketch → Image translation
@@ -91,7 +77,7 @@ Advantages:
 ## 3. Custom GAN (Pix2Pix-style)
 
 Custom implementation inspired by Pix2Pix using:
-- U-Net Generator
+- Generator (U-Net architecture based)
 - PatchGAN Discriminator
 - Custom upsampling/downsampling blocks
 
@@ -161,8 +147,6 @@ This significantly improved training diversity and robustness.
 # Results
 
 ## ControlNet + Stable Diffusion
-
-### Advantages
 - High-quality realistic outputs
 - Highly flexible
 - Works across domains
@@ -177,7 +161,6 @@ This significantly improved training diversity and robustness.
 
 ## GAN-Based Models
 
-### Advantages
 - Faster inference
 - Better domain-specific control
 - Lightweight deployment
@@ -187,35 +170,3 @@ This significantly improved training diversity and robustness.
 - Resource-intensive training
 - Less flexible across domains
 
----
-
-# Comparison Table
-
-| Feature | ControlNet + Diffusion | GAN-Based Models |
-|---|---|---|
-| Training Stability | High | Moderate |
-| Inference Speed | Slow | Fast |
-| Output Quality | Very High | High |
-| Flexibility | Excellent | Moderate |
-| Data Requirement | Low (fine-tuning) | High |
-| Modularity | High | Lower |
-| User Control | Prompt-based | Architecture-based |
-
----
-
-# Repository Structure
-
-```bash
-.
-├── datasets/
-├── models/
-│   ├── cyclegan/
-│   ├── custom_gan/
-│   └── diffusion/
-├── notebooks/
-├── outputs/
-├── scripts/
-├── utils/
-├── train.py
-├── inference.py
-└── README.md
